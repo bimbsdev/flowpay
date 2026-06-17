@@ -1,0 +1,979 @@
+{
+  "project": "FlowPay Stellar",
+  "program": "Drips Wave",
+  "totalIssues": 65,
+  "description": "Complete set of issues for Drips Wave contributor program",
+  "issues": [
+    {
+      "id": 101,
+      "title": "Add API Endpoint Documentation",
+      "category": "documentation",
+      "points": 2,
+      "description": "Create comprehensive OpenAPI/Swagger documentation for all REST endpoints including authentication, workflow, payment, merchant, and drips endpoints with example requests/responses.",
+      "acceptanceCriteria": [
+        "OpenAPI 3.0 spec created",
+        "All endpoints documented with examples",
+        "Error responses documented",
+        "Deploy to /api-docs route"
+      ],
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "id": 102,
+      "title": "Add Smart Contract Function Documentation",
+      "category": "documentation",
+      "points": 3,
+      "description": "Add comprehensive JSDoc comments to all Soroban smart contract functions in Rust with parameter documentation and example invocations.",
+      "acceptanceCriteria": [
+        "All public functions documented",
+        "Parameter types and meanings explained",
+        "Example invocations provided",
+        "Build succeeds without warnings"
+      ],
+      "labels": ["documentation", "blockchain", "drips-wave", "3-points"]
+    },
+    {
+      "id": 103,
+      "title": "Create Video Tutorial - Getting Started with FlowPay",
+      "category": "documentation",
+      "points": 3,
+      "description": "Create a 5-10 minute video tutorial covering local setup, running services, creating merchant account, processing test payment, and viewing history.",
+      "acceptanceCriteria": [
+        "Video created and uploaded",
+        "Covers all 5 steps",
+        "Total runtime 5-10 minutes",
+        "Linked in README and docs"
+      ],
+      "labels": ["documentation", "drips-wave", "3-points"]
+    },
+    {
+      "id": 104,
+      "title": "Add Environment Configuration Guide",
+      "category": "documentation",
+      "points": 2,
+      "description": "Create detailed guide covering environment variables, development vs production setup, Stellar testnet/mainnet config, database setup, and smart contract deployment prerequisites.",
+      "acceptanceCriteria": [
+        "Guide covers all config scenarios",
+        "Examples for each environment",
+        "Troubleshooting section included",
+        "Deployed to docs/"
+      ],
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "id": 105,
+      "title": "Create Deployment Runbook",
+      "category": "documentation",
+      "points": 3,
+      "description": "Create step-by-step deployment guide for Docker Compose, Kubernetes, PostgreSQL backup/restore, smart contract upgrades, and health check verification.",
+      "acceptanceCriteria": [
+        "Covers all deployment scenarios",
+        "Pre-flight checks documented",
+        "Rollback procedures included",
+        "Health verification steps included"
+      ],
+      "labels": ["documentation", "infrastructure", "drips-wave", "3-points"]
+    },
+    {
+      "id": 106,
+      "title": "Add Troubleshooting Guide",
+      "category": "documentation",
+      "points": 2,
+      "description": "Create comprehensive troubleshooting guide addressing common setup errors, payment failures, smart contract errors, database issues, and authentication problems.",
+      "acceptanceCriteria": [
+        "Covers 15+ common issues",
+        "Solutions tested",
+        "Links to relevant docs",
+        "Published to docs/TROUBLESHOOTING.md"
+      ],
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "id": 107,
+      "title": "Fix Missing Null Checks in Payment Processing",
+      "category": "bug",
+      "points": 3,
+      "description": "Add comprehensive null checks for recipient address, amount, timestamp, and merchant ID validation in payment service.",
+      "acceptanceCriteria": [
+        "All null cases handled",
+        "Errors thrown with context",
+        "Unit tests added",
+        "No uncaught null reference errors"
+      ],
+      "labels": ["bug", "backend", "drips-wave", "3-points"]
+    },
+    {
+      "id": 108,
+      "title": "Fix Race Condition in Nonce Management",
+      "category": "bug",
+      "points": 5,
+      "description": "Fix potential race condition where multiple concurrent transactions could use same nonce in smart contracts.",
+      "acceptanceCriteria": [
+        "Race condition fixed",
+        "Add concurrency tests",
+        "Document nonce lifecycle",
+        "Test with 100+ concurrent requests"
+      ],
+      "labels": ["bug", "blockchain", "drips-wave", "5-points"]
+    },
+    {
+      "id": 109,
+      "title": "Fix Escrow Timeout Edge Case",
+      "category": "bug",
+      "points": 3,
+      "description": "Fix escrow contract's timeout check for edge cases like timeout exactly at block time, ensure refunds triggered on expiry, and status updated.",
+      "acceptanceCriteria": [
+        "Timeout logic fixed",
+        "Tests cover edge cases",
+        "Refund triggered correctly",
+        "Status transitions tested"
+      ],
+      "labels": ["bug", "blockchain", "drips-wave", "3-points"]
+    },
+    {
+      "id": 110,
+      "title": "Fix Frontend Form Validation Message Clarity",
+      "category": "bug",
+      "points": 2,
+      "description": "Improve cryptic validation error messages in registration and login forms with specific field errors and clear password requirements.",
+      "acceptanceCriteria": [
+        "All error messages specific",
+        "Password requirements shown",
+        "Real-time validation feedback",
+        "Tested with 5+ test cases"
+      ],
+      "labels": ["bug", "frontend", "drips-wave", "2-points"]
+    },
+    {
+      "id": 111,
+      "title": "Fix Database Migration Issues",
+      "category": "bug",
+      "points": 3,
+      "description": "Ensure Prisma migrations are atomic with proper transaction rollback, handle schema conflicts, and prevent foreign key constraint errors.",
+      "acceptanceCriteria": [
+        "All migrations atomic",
+        "Rollback tested",
+        "Conflict resolution documented",
+        "Migration history audit trail added"
+      ],
+      "labels": ["bug", "backend", "drips-wave", "3-points"]
+    },
+    {
+      "id": 112,
+      "title": "Fix Rate Limiter Edge Cases",
+      "category": "bug",
+      "points": 3,
+      "description": "Fix rate limiter issues: proper cleanup of expired windows, prevent memory leak with many IPs, and handle clock skew.",
+      "acceptanceCriteria": [
+        "Memory leak fixed",
+        "Expired entries cleaned up",
+        "Clock skew handled",
+        "Tested under load"
+      ],
+      "labels": ["bug", "backend", "security", "drips-wave", "3-points"]
+    },
+    {
+      "id": 113,
+      "title": "Fix CORS Configuration Vulnerability",
+      "category": "bug",
+      "points": 2,
+      "description": "Implement proper CORS security: origin whitelist, credential scoping, and preflight caching optimization.",
+      "acceptanceCriteria": [
+        "Origin whitelist implemented",
+        "Credentials properly scoped",
+        "Preflight caching optimized",
+        "Security test added"
+      ],
+      "labels": ["bug", "security", "drips-wave", "2-points"]
+    },
+    {
+      "id": 114,
+      "title": "Add Unit Tests for Payment Service",
+      "category": "testing",
+      "points": 8,
+      "description": "Add comprehensive unit tests for payment creation, status transitions, error handling, webhook triggering, and database transactions with 80%+ coverage.",
+      "acceptanceCriteria": [
+        "30+ test cases added",
+        "80%+ coverage achieved",
+        "All edge cases covered",
+        "Tests run in < 10 seconds"
+      ],
+      "labels": ["testing", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 115,
+      "title": "Add Integration Tests for Payment Flow",
+      "category": "testing",
+      "points": 13,
+      "description": "Create integration tests for end-to-end payment flow using TestContainers for database isolation.",
+      "acceptanceCriteria": [
+        "10+ integration test scenarios",
+        "Database containerized",
+        "Tests run in < 30 seconds",
+        "All scenarios pass consistently"
+      ],
+      "labels": ["testing", "backend", "drips-wave", "13-points"]
+    },
+    {
+      "id": 116,
+      "title": "Add Smart Contract Unit Tests",
+      "category": "testing",
+      "points": 13,
+      "description": "Add Rust unit tests for all Soroban contracts with 75%+ coverage including edge cases.",
+      "acceptanceCriteria": [
+        "Unit tests for all contracts",
+        "75%+ coverage",
+        "Edge cases tested",
+        "All tests pass on Testnet"
+      ],
+      "labels": ["testing", "blockchain", "drips-wave", "13-points"]
+    },
+    {
+      "id": 117,
+      "title": "Add Frontend Component Tests",
+      "category": "testing",
+      "points": 5,
+      "description": "Add Jest tests for React components with 70%+ coverage including validation, rendering, and interactions.",
+      "acceptanceCriteria": [
+        "Jest tests for all major components",
+        "70%+ coverage",
+        "User interactions tested",
+        "Tests run in < 15 seconds"
+      ],
+      "labels": ["testing", "frontend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 118,
+      "title": "Add E2E Tests for Critical Workflows",
+      "category": "testing",
+      "points": 13,
+      "description": "Add Playwright E2E tests for complete payment flow, merchant operations, transaction history, error handling, and mobile responsiveness.",
+      "acceptanceCriteria": [
+        "5+ E2E test scenarios",
+        "Tests pass on Chrome, Firefox",
+        "Mobile viewport tested",
+        "Tests run in < 60 seconds"
+      ],
+      "labels": ["testing", "frontend", "drips-wave", "13-points"]
+    },
+    {
+      "id": 119,
+      "title": "Add Performance Benchmarks",
+      "category": "testing",
+      "points": 8,
+      "description": "Create benchmark tests for payment latency, API response times, database queries, smart contract gas costs, and frontend load time.",
+      "acceptanceCriteria": [
+        "Benchmarks for all components",
+        "Baseline metrics documented",
+        "Performance targets set",
+        "CI integration for regression detection"
+      ],
+      "labels": ["testing", "performance", "drips-wave", "8-points"]
+    },
+    {
+      "id": 120,
+      "title": "Improve Payment Form UX",
+      "category": "frontend",
+      "points": 3,
+      "description": "Add real-time validation feedback, input masking, currency dropdown, and better error display to payment form.",
+      "acceptanceCriteria": [
+        "Real-time validation working",
+        "Clear feedback for each field",
+        "Loading spinner on submit",
+        "Tested on mobile"
+      ],
+      "labels": ["frontend", "ux", "drips-wave", "3-points"]
+    },
+    {
+      "id": 121,
+      "title": "Add Transaction Detail Modal",
+      "category": "frontend",
+      "points": 5,
+      "description": "Add modal showing transaction ID, sender/recipient, amount, status timeline, blockchain confirmation, and copy functionality.",
+      "acceptanceCriteria": [
+        "Modal displays all details",
+        "Accessible (keyboard navigation)",
+        "Mobile responsive",
+        "Copy functionality working"
+      ],
+      "labels": ["frontend", "feature", "drips-wave", "5-points"]
+    },
+    {
+      "id": 122,
+      "title": "Add Dark Mode Support",
+      "category": "frontend",
+      "points": 5,
+      "description": "Implement dark mode throughout app with toggle, localStorage persistence, Tailwind updates, and WCAG AA compliance.",
+      "acceptanceCriteria": [
+        "Dark mode toggle working",
+        "All pages support dark mode",
+        "WCAG AA contrast compliance",
+        "Preference persists"
+      ],
+      "labels": ["frontend", "feature", "drips-wave", "5-points"]
+    },
+    {
+      "id": 123,
+      "title": "Add Data Export Functionality",
+      "category": "frontend",
+      "points": 3,
+      "description": "Add ability to export transactions as CSV/JSON with date range filtering and custom column selection.",
+      "acceptanceCriteria": [
+        "CSV export working",
+        "JSON export working",
+        "Date filtering functional",
+        "File downloads correctly"
+      ],
+      "labels": ["frontend", "feature", "drips-wave", "3-points"]
+    },
+    {
+      "id": 124,
+      "title": "Improve Mobile Navigation",
+      "category": "frontend",
+      "points": 3,
+      "description": "Add hamburger menu, improve touch targets to 48x48px, better mobile layouts, and test on iOS/Android.",
+      "acceptanceCriteria": [
+        "Hamburger menu implemented",
+        "All touch targets 48x48+",
+        "Mobile layouts tested",
+        "Performance acceptable on 4G"
+      ],
+      "labels": ["frontend", "mobile", "drips-wave", "3-points"]
+    },
+    {
+      "id": 125,
+      "title": "Add Animations and Transitions",
+      "category": "frontend",
+      "points": 5,
+      "description": "Add micro-interactions using Framer Motion for page transitions, loading, feedback, hover states, and number animations.",
+      "acceptanceCriteria": [
+        "Animations added to 10+ interactions",
+        "Performance remains smooth (60fps)",
+        "Accessible (respects prefers-reduced-motion)",
+        "Tested on low-end devices"
+      ],
+      "labels": ["frontend", "ux", "drips-wave", "5-points"]
+    },
+    {
+      "id": 126,
+      "title": "Add Notification Center",
+      "category": "frontend",
+      "points": 8,
+      "description": "Create centralized notification system with toast, history, clear all, auto-dismiss, sound option, and persistence.",
+      "acceptanceCriteria": [
+        "Toast system working",
+        "History persisted",
+        "Multiple notifications stacked",
+        "Mobile responsive"
+      ],
+      "labels": ["frontend", "feature", "drips-wave", "8-points"]
+    },
+    {
+      "id": 127,
+      "title": "Add CSRF Protection",
+      "category": "security",
+      "points": 5,
+      "description": "Implement CSRF token validation with token generation, validation, rotation, and documentation.",
+      "acceptanceCriteria": [
+        "Tokens generated correctly",
+        "Validation working",
+        "Tests for CSRF scenarios",
+        "Documented in security guide"
+      ],
+      "labels": ["security", "backend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 128,
+      "title": "Add Input Sanitization",
+      "category": "security",
+      "points": 3,
+      "description": "Sanitize all user inputs to prevent XSS with HTML sanitization, URL validation, special character escaping.",
+      "acceptanceCriteria": [
+        "XSS tests added",
+        "All inputs sanitized",
+        "No innerHTML usage",
+        "Security audit passed"
+      ],
+      "labels": ["security", "frontend", "backend", "drips-wave", "3-points"]
+    },
+    {
+      "id": 129,
+      "title": "Implement API Key Rotation",
+      "category": "security",
+      "points": 8,
+      "description": "Add API key rotation mechanism with gradual deprecation, revocation, audit trail, and webhook retry support.",
+      "acceptanceCriteria": [
+        "Key rotation working",
+        "Old keys deprecated properly",
+        "Audit logs created",
+        "Documented for users"
+      ],
+      "labels": ["security", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 130,
+      "title": "Add Secrets Encryption at Rest",
+      "category": "security",
+      "points": 5,
+      "description": "Encrypt merchant API keys, JWT secrets, and webhook secrets in database with proper key management.",
+      "acceptanceCriteria": [
+        "All secrets encrypted",
+        "Encryption keys managed securely",
+        "Performance acceptable",
+        "Decryption verified"
+      ],
+      "labels": ["security", "backend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 131,
+      "title": "Add Security Audit Logging",
+      "category": "security",
+      "points": 5,
+      "description": "Implement comprehensive audit logging for authentication, authorization, data access, config changes, and webhook attempts.",
+      "acceptanceCriteria": [
+        "All security events logged",
+        "Logs searchable and filtered",
+        "Retention policy enforced",
+        "Dashboard to view logs"
+      ],
+      "labels": ["security", "backend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 132,
+      "title": "Add Rate Limiting by User Tier",
+      "category": "security",
+      "points": 8,
+      "description": "Implement tiered rate limiting with free (100/min), premium (1000/min), enterprise (unlimited), per-endpoint limits.",
+      "acceptanceCriteria": [
+        "Tiers implemented",
+        "Limits enforced correctly",
+        "Headers show remaining quota",
+        "Tested under load"
+      ],
+      "labels": ["security", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 133,
+      "title": "Implement Database Query Caching",
+      "category": "performance",
+      "points": 8,
+      "description": "Add caching layer for merchant profiles, transaction history, and exchange rates with proper invalidation.",
+      "acceptanceCriteria": [
+        "Caching implemented",
+        "Cache invalidation working",
+        "50%+ reduction in DB queries",
+        "No stale data issues"
+      ],
+      "labels": ["performance", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 134,
+      "title": "Optimize Smart Contract Gas Usage",
+      "category": "performance",
+      "points": 13,
+      "description": "Profile and reduce smart contract gas costs by optimizing state writes and batching operations.",
+      "acceptanceCriteria": [
+        "Gas profiling completed",
+        "30%+ reduction achieved",
+        "Costs documented",
+        "Testnet deployment verified"
+      ],
+      "labels": ["performance", "blockchain", "drips-wave", "13-points"]
+    },
+    {
+      "id": 135,
+      "title": "Add Frontend Bundle Size Optimization",
+      "category": "performance",
+      "points": 5,
+      "description": "Reduce bundle size through code splitting, lazy loading, tree shaking, and SVG minification to < 200KB gzipped.",
+      "acceptanceCriteria": [
+        "Bundle analysis completed",
+        "Code splitting implemented",
+        "Size < 200KB gzipped",
+        "Performance monitored"
+      ],
+      "labels": ["performance", "frontend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 136,
+      "title": "Implement API Response Pagination",
+      "category": "performance",
+      "points": 3,
+      "description": "Add pagination to list endpoints (transactions, merchants, webhooks) with default 20 per page.",
+      "acceptanceCriteria": [
+        "All list endpoints paginated",
+        "Links included in response",
+        "Tested with 1000+ items",
+        "UI updated to handle pagination"
+      ],
+      "labels": ["performance", "backend", "drips-wave", "3-points"]
+    },
+    {
+      "id": 137,
+      "title": "Add Database Connection Pooling",
+      "category": "performance",
+      "points": 5,
+      "description": "Optimize database connections with pool sizing, timeout, retry logic, and monitoring dashboard.",
+      "acceptanceCriteria": [
+        "Pool configured optimally",
+        "Timeout handling works",
+        "Monitoring dashboard created",
+        "Performance improved by 20%+"
+      ],
+      "labels": ["performance", "backend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 138,
+      "title": "Extract Common Validation Logic",
+      "category": "refactoring",
+      "points": 5,
+      "description": "Reduce code duplication by extracting email, amount, and address validation to utilities.",
+      "acceptanceCriteria": [
+        "Utilities created",
+        "All validators refactored to use",
+        "Tests for utilities",
+        "DRY principle achieved"
+      ],
+      "labels": ["refactoring", "backend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 139,
+      "title": "Implement Event Bus Pattern",
+      "category": "architecture",
+      "points": 13,
+      "description": "Replace direct service calls with event bus pattern for PaymentCreated, PaymentFailed, WebhookSent events.",
+      "acceptanceCriteria": [
+        "EventBus created",
+        "Services emit events",
+        "Subscribers registered",
+        "Tests for async events",
+        "No direct service coupling"
+      ],
+      "labels": ["architecture", "backend", "drips-wave", "13-points"]
+    },
+    {
+      "id": 140,
+      "title": "Add Dependency Injection Container",
+      "category": "architecture",
+      "points": 8,
+      "description": "Implement proper DI for better testability with service registration and auto-wiring.",
+      "acceptanceCriteria": [
+        "Container created",
+        "All services registered",
+        "Tests use DI",
+        "Circular dependencies resolved"
+      ],
+      "labels": ["architecture", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 141,
+      "title": "Extract Webhook Manager Service",
+      "category": "refactoring",
+      "points": 8,
+      "description": "Create dedicated WebhookManager for registration, retries, signatures, logging, and discovery.",
+      "acceptanceCriteria": [
+        "Service created",
+        "All webhook logic extracted",
+        "Retry logic improved",
+        "Signature verification added"
+      ],
+      "labels": ["refactoring", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 142,
+      "title": "Migrate to TypeScript Strict Mode",
+      "category": "refactoring",
+      "points": 5,
+      "description": "Enable TypeScript strict mode and fix all type errors, removing 'any' types.",
+      "acceptanceCriteria": [
+        "Strict mode enabled",
+        "No 'any' types remaining",
+        "Build passes",
+        "All tests pass"
+      ],
+      "labels": ["refactoring", "backend", "frontend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 143,
+      "title": "Implement Feature Flags System",
+      "category": "architecture",
+      "points": 8,
+      "description": "Add feature flag system for A/B testing, gradual rollouts, and per-user feature enablement.",
+      "acceptanceCriteria": [
+        "Feature flag system implemented",
+        "5+ example flags created",
+        "Admin dashboard to manage flags",
+        "Performance overhead minimal"
+      ],
+      "labels": ["architecture", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 144,
+      "title": "Add Webhook Retry Logic",
+      "category": "feature",
+      "points": 8,
+      "description": "Improve webhook reliability with exponential backoff, 10 retry attempts, 24 hour window, and dashboard.",
+      "acceptanceCriteria": [
+        "Retry logic implemented",
+        "Dashboard shows delivery status",
+        "Manual retry working",
+        "Tests cover edge cases"
+      ],
+      "labels": ["feature", "backend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 145,
+      "title": "Add Payment Analytics Dashboard",
+      "category": "feature",
+      "points": 13,
+      "description": "Create analytics dashboard with volume, transaction size, success rate, top merchants, and revenue breakdown.",
+      "acceptanceCriteria": [
+        "Dashboard displays all metrics",
+        "Charts interactive and exportable",
+        "Date range filtering works",
+        "Mobile responsive"
+      ],
+      "labels": ["feature", "frontend", "analytics", "drips-wave", "13-points"]
+    },
+    {
+      "id": 146,
+      "title": "Add Refund Management",
+      "category": "feature",
+      "points": 13,
+      "description": "Implement refund system with full/partial support, reason tracking, status tracking, and webhooks.",
+      "acceptanceCriteria": [
+        "Full refund working",
+        "Partial refund working",
+        "Refund tracking in database",
+        "Tests cover all scenarios"
+      ],
+      "labels": ["feature", "backend", "drips-wave", "13-points"]
+    },
+    {
+      "id": 147,
+      "title": "Add Multi-Currency Support",
+      "category": "feature",
+      "points": 21,
+      "description": "Support multiple currencies (USD, EUR, XLM, USDC) with exchange rate API, contract updates, and conversions.",
+      "acceptanceCriteria": [
+        "Multi-currency DB schema",
+        "Exchange rate caching",
+        "Contracts updated",
+        "Dashboard shows conversions",
+        "Tests for all currencies"
+      ],
+      "labels": ["feature", "backend", "frontend", "drips-wave", "21-points"]
+    },
+    {
+      "id": 148,
+      "title": "Add Payment Reconciliation Service",
+      "category": "feature",
+      "points": 13,
+      "description": "Create reconciliation tool to compare internal records with Stellar, detect discrepancies, and generate reports.",
+      "acceptanceCriteria": [
+        "Reconciliation engine created",
+        "Runs on schedule",
+        "Discrepancies flagged",
+        "Reports generated"
+      ],
+      "labels": ["feature", "backend", "drips-wave", "13-points"]
+    },
+    {
+      "id": 149,
+      "title": "Add Advanced Filtering to Transactions",
+      "category": "feature",
+      "points": 5,
+      "description": "Add filtering by date, amount, status, payment type, merchant, recipient with preset saving.",
+      "acceptanceCriteria": [
+        "All filters implemented",
+        "Filters chainable",
+        "Performance acceptable with 100K+ transactions",
+        "Presets save/load working"
+      ],
+      "labels": ["feature", "frontend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 150,
+      "title": "Add Webhook Signature Verification",
+      "category": "feature",
+      "points": 3,
+      "description": "Secure webhook delivery with HMAC signatures and verification documentation.",
+      "acceptanceCriteria": [
+        "Signatures generated correctly",
+        "Verification working",
+        "Documentation complete",
+        "Example code provided"
+      ],
+      "labels": ["feature", "backend", "security", "drips-wave", "3-points"]
+    },
+    {
+      "id": 151,
+      "title": "Create Docker Compose Stack",
+      "category": "infrastructure",
+      "points": 5,
+      "description": "Create docker-compose.yml for local development with backend, frontend, PostgreSQL, Redis, volumes, and networking.",
+      "acceptanceCriteria": [
+        "docker-compose.yml created",
+        "All services start: docker-compose up",
+        "Services communicate correctly",
+        "Documented in README"
+      ],
+      "labels": ["infrastructure", "devops", "drips-wave", "5-points"]
+    },
+    {
+      "id": 152,
+      "title": "Create Kubernetes Manifests",
+      "category": "infrastructure",
+      "points": 13,
+      "description": "Create Kubernetes deployment files with deployments, services, configmaps, secrets, volumes, health checks.",
+      "acceptanceCriteria": [
+        "All manifests created",
+        "App deploys with kubectl apply",
+        "Services accessible",
+        "Health checks working"
+      ],
+      "labels": ["infrastructure", "kubernetes", "drips-wave", "13-points"]
+    },
+    {
+      "id": 153,
+      "title": "Add Deep Health Check Endpoints",
+      "category": "infrastructure",
+      "points": 3,
+      "description": "Enhance health endpoints with /health/deep including DB, Redis, Stellar network checks.",
+      "acceptanceCriteria": [
+        "Endpoints returning correct status",
+        "All dependencies checked",
+        "Response format documented",
+        "Used in K8s probes"
+      ],
+      "labels": ["infrastructure", "backend", "drips-wave", "3-points"]
+    },
+    {
+      "id": 154,
+      "title": "Setup CI/CD Pipeline Enhancement",
+      "category": "infrastructure",
+      "points": 8,
+      "description": "Enhance GitHub Actions with coverage reporting, security scanning, SonarQube integration, automated deployment.",
+      "acceptanceCriteria": [
+        "All jobs automated",
+        "Coverage reports visible",
+        "Notifications working",
+        "Deployment automated"
+      ],
+      "labels": ["infrastructure", "devops", "drips-wave", "8-points"]
+    },
+    {
+      "id": 155,
+      "title": "Add Monitoring and Alerting Stack",
+      "category": "infrastructure",
+      "points": 13,
+      "description": "Setup Prometheus, Grafana dashboards, alert rules, Slack integration, and performance monitoring.",
+      "acceptanceCriteria": [
+        "Metrics collected",
+        "Dashboards created",
+        "Alerts configured",
+        "Critical issues caught early"
+      ],
+      "labels": ["infrastructure", "monitoring", "drips-wave", "13-points"]
+    },
+    {
+      "id": 156,
+      "title": "Add Stellar Testnet Faucet Integration",
+      "category": "blockchain",
+      "points": 5,
+      "description": "Auto-fund test accounts with Stellar Testnet faucet API integration and rate limiting.",
+      "acceptanceCriteria": [
+        "Faucet integration working",
+        "Test accounts auto-funded",
+        "Rate limiting enforced",
+        "Tested with multiple accounts"
+      ],
+      "labels": ["blockchain", "stellar", "drips-wave", "5-points"]
+    },
+    {
+      "id": 157,
+      "title": "Add Contract Verification Display",
+      "category": "blockchain",
+      "points": 8,
+      "description": "Show smart contract details in UI with addresses, verification status, Stellar Lab links, ABI, deployment history.",
+      "acceptanceCriteria": [
+        "Contract info displayed",
+        "External links working",
+        "ABI readable format",
+        "Mobile responsive"
+      ],
+      "labels": ["blockchain", "frontend", "drips-wave", "8-points"]
+    },
+    {
+      "id": 158,
+      "title": "Add Transaction Fee Estimation",
+      "category": "blockchain",
+      "points": 5,
+      "description": "Estimate Stellar network fees and smart contract execution fees with real-time updates.",
+      "acceptanceCriteria": [
+        "Fee estimation working",
+        "Display in payment form",
+        "Estimates accurate",
+        "Updates in real-time"
+      ],
+      "labels": ["blockchain", "frontend", "drips-wave", "5-points"]
+    },
+    {
+      "id": 159,
+      "title": "Add Stellar Chain Monitoring",
+      "category": "blockchain",
+      "points": 8,
+      "description": "Monitor Stellar chain health with ledger close times, network health, XLM price, and alerts.",
+      "acceptanceCriteria": [
+        "Metrics collected",
+        "Dashboard showing stats",
+        "Alerts on abnormalities",
+        "Data persisted"
+      ],
+      "labels": ["blockchain", "monitoring", "drips-wave", "8-points"]
+    },
+    {
+      "id": 160,
+      "title": "Add Soroban Contract Upgrade Strategy",
+      "category": "blockchain",
+      "points": 13,
+      "description": "Implement proxy pattern for zero-downtime contract upgrades with version management and rollback.",
+      "acceptanceCriteria": [
+        "Proxy pattern implemented",
+        "Upgrade procedure works",
+        "Rollback tested",
+        "Zero-downtime upgrades"
+      ],
+      "labels": ["blockchain", "architecture", "drips-wave", "13-points"]
+    },
+    {
+      "id": 161,
+      "title": "Fix Typos in Documentation",
+      "category": "polish",
+      "points": 1,
+      "description": "Search codebase for and fix typos in documentation, comments, error messages, and UI text.",
+      "acceptanceCriteria": [
+        "All typos fixed",
+        "Spell-check run",
+        "PR includes before/after"
+      ],
+      "labels": ["documentation", "polish", "drips-wave", "1-points"]
+    },
+    {
+      "id": 162,
+      "title": "Add Missing Environment Variable Documentation",
+      "category": "polish",
+      "points": 2,
+      "description": "Document all environment variables with purpose, valid values, defaults, examples, and security considerations.",
+      "acceptanceCriteria": [
+        "All vars documented",
+        "Examples provided",
+        "Defaults listed",
+        "Published to docs"
+      ],
+      "labels": ["documentation", "polish", "drips-wave", "2-points"]
+    },
+    {
+      "id": 163,
+      "title": "Improve Error Messages Throughout App",
+      "category": "polish",
+      "points": 2,
+      "description": "Make error messages more helpful with actionable suggestions, docs links, and clear language.",
+      "acceptanceCriteria": [
+        "10+ error messages improved",
+        "Tested with users",
+        "Feedback positive"
+      ],
+      "labels": ["ux", "frontend", "polish", "drips-wave", "2-points"]
+    },
+    {
+      "id": 164,
+      "title": "Add Loading Skeleton Screens",
+      "category": "polish",
+      "points": 3,
+      "description": "Add loading skeleton screens for transaction list, merchant profile, and dashboard charts.",
+      "acceptanceCriteria": [
+        "Skeletons on all data-loading pages",
+        "Smooth animation",
+        "Matches final layout",
+        "Accessible to screen readers"
+      ],
+      "labels": ["frontend", "ux", "polish", "drips-wave", "3-points"]
+    },
+    {
+      "id": 165,
+      "title": "Fix Mobile Layout Issues",
+      "category": "polish",
+      "points": 2,
+      "description": "Fix responsive design issues with text overflow, button sizes, form alignment, and navbar.",
+      "acceptanceCriteria": [
+        "All pages mobile-friendly",
+        "Tested on iOS and Android",
+        "Touch targets adequate",
+        "Performance acceptable"
+      ],
+      "labels": ["frontend", "mobile", "polish", "drips-wave", "2-points"]
+    }
+  ],
+  "statistics": {
+    "byCategory": {
+      "documentation": 6,
+      "bug": 7,
+      "testing": 6,
+      "frontend": 7,
+      "security": 6,
+      "performance": 5,
+      "refactoring": 6,
+      "architecture": 6,
+      "feature": 7,
+      "infrastructure": 5,
+      "blockchain": 5,
+      "polish": 5
+    },
+    "byPoints": {
+      "1": 1,
+      "2": 10,
+      "3": 13,
+      "5": 15,
+      "8": 12,
+      "13": 9,
+      "21": 1
+    },
+    "byDifficulty": {
+      "easy_1-5": 28,
+      "medium_5-13": 28,
+      "hard_13+": 9
+    },
+    "totalPoints": 379
+  },
+  "labels": [
+    "drips-wave",
+    "1-points",
+    "2-points",
+    "3-points",
+    "5-points",
+    "8-points",
+    "13-points",
+    "21-points",
+    "documentation",
+    "bug",
+    "testing",
+    "frontend",
+    "security",
+    "performance",
+    "refactoring",
+    "architecture",
+    "feature",
+    "infrastructure",
+    "blockchain",
+    "polish",
+    "backend",
+    "ux",
+    "mobile",
+    "analytics",
+    "devops",
+    "kubernetes",
+    "monitoring",
+    "stellar"
+  ]
+}

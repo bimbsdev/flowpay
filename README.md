@@ -1,5 +1,14 @@
 # FlowPay 🚀
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Stellar Network](https://img.shields.io/badge/Stellar-Testnet-blue.svg)](https://testnet.stellar.org/)
+[![Build Status](https://github.com/bimbsdev/flowpay/actions/workflows/ci.yml/badge.svg)](https://github.com/bimbsdev/flowpay/actions)
+[![Node.js Version](https://img.shields.io/badge/Node.js-22.x-green.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
+[![NestJS](https://img.shields.io/badge/NestJS-10-e0234e.svg)](https://nestjs.com/)
+[![Soroban](https://img.shields.io/badge/Soroban-Smart%20Contracts-7b3ff2.svg)](https://developers.stellar.org/)
+
 **Programmable Micropayments & Continuous Payment Streams on Stellar**
 
 > Turn any digital event into an automated payment stream. Event-driven finance infrastructure for the Web3 era.
@@ -20,6 +29,47 @@ FlowPay is a production-ready platform that enables **automated, programmable pa
 - ✅ Fully automated execution
 - ✅ No intermediaries or trust required
 - ✅ Global reach (180+ countries)
+
+---
+
+## 🚀 Quick Start
+
+### 1. Prerequisites
+```bash
+# Check requirements
+node --version      # Should be 22.x
+yarn --version      # Should be 1.22.x
+git --version
+```
+
+### 2. Clone & Install
+```bash
+git clone https://github.com/bimbsdev/flowpay.git
+cd flowpay-stellar
+yarn install
+```
+
+### 3. Setup Environment
+```bash
+# Copy environment template
+cp .env.example .env.local
+
+# Edit with your Stellar testnet credentials
+vim .env.local
+```
+
+### 4. Run Development Servers
+```bash
+# Terminal 1: Backend
+cd backend && yarn start:dev
+
+# Terminal 2: Frontend
+cd frontend && yarn dev
+
+# App opens at http://localhost:3000
+```
+
+**✅ Ready in 5 minutes!**
 
 ---
 

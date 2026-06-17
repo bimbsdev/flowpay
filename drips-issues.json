@@ -1,0 +1,54 @@
+{
+  "issues": [
+    {
+      "title": "Add API Endpoint Documentation",
+      "body": "Create comprehensive OpenAPI/Swagger documentation for all REST endpoints including:\n- Authentication endpoints (register, login)\n- Workflow endpoints (list, create, update)\n- Payment endpoints (create, status)\n- Merchant endpoints (profile management)\n- Drips endpoints (drip configurations)\n\nAdd example requests/responses for each endpoint.\n\n**Acceptance Criteria:**\n- [ ] OpenAPI 3.0 spec created\n- [ ] All endpoints documented with examples\n- [ ] Error responses documented\n- [ ] Deploy to /api-docs route",
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "title": "Add Smart Contract Function Documentation",
+      "body": "Add comprehensive JSDoc comments to all Soroban smart contract functions in Rust:\n- payment_channel.rs: Document all public functions, parameters, return values\n- escrow.rs: Document escrow logic and state transitions\n- merchant_registry.rs: Document merchant operations\n- recurring_payment.rs: Document subscription logic\n\nInclude example invocations for each function.\n\n**Acceptance Criteria:**\n- [ ] All public functions documented\n- [ ] Parameter types and meanings explained\n- [ ] Example invocations provided\n- [ ] Build succeeds without warnings",
+      "labels": ["documentation", "drips-wave", "3-points"]
+    },
+    {
+      "title": "Create Video Tutorial - Getting Started with FlowPay",
+      "body": "Create a 5-10 minute video tutorial covering:\n- Local development setup (< 5 minutes)\n- Running the backend and frontend\n- Creating first merchant account\n- Processing test payment\n- Viewing transaction history\n\nPublish to project docs and link from README.\n\n**Acceptance Criteria:**\n- [ ] Video created and uploaded\n- [ ] Covers all 5 steps\n- [ ] Total runtime 5-10 minutes\n- [ ] Linked in README and docs",
+      "labels": ["documentation", "drips-wave", "3-points"]
+    },
+    {
+      "title": "Add Environment Configuration Guide",
+      "body": "Create detailed guide covering:\n- All environment variables and their purposes\n- How to set up for development vs production\n- Stellar testnet vs mainnet configuration\n- Database setup instructions\n- Smart contract deployment prerequisites\n\n**Acceptance Criteria:**\n- [ ] Guide covers all config scenarios\n- [ ] Examples for each environment\n- [ ] Troubleshooting section included\n- [ ] Deployed to docs/",
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "title": "Create Deployment Runbook",
+      "body": "Create step-by-step deployment guide for:\n- Docker Compose deployment (local)\n- Kubernetes deployment (production)\n- PostgreSQL backup/restore procedures\n- Smart contract upgrades\n- Health check verification\n\n**Acceptance Criteria:**\n- [ ] Covers all deployment scenarios\n- [ ] Pre-flight checks documented\n- [ ] Rollback procedures included\n- [ ] Health verification steps included",
+      "labels": ["documentation", "drips-wave", "3-points"]
+    },
+    {
+      "title": "Add Troubleshooting Guide",
+      "body": "Create comprehensive troubleshooting guide addressing:\n- Common setup errors\n- Payment processing failures\n- Smart contract invocation errors\n- Database connection issues\n- Authentication problems\n\nInclude root causes and solutions.\n\n**Acceptance Criteria:**\n- [ ] Covers 15+ common issues\n- [ ] Solutions tested\n- [ ] Links to relevant docs\n- [ ] Published to docs/TROUBLESHOOTING.md",
+      "labels": ["documentation", "drips-wave", "2-points"]
+    },
+    {
+      "title": "Fix Missing Null Checks in Payment Processing",
+      "body": "Current payment service doesn't properly validate null/undefined values in:\n- Recipient address validation\n- Amount validation edge cases\n- Timestamp validation\n- Merchant ID validation\n\nAdd comprehensive null checks and throw descriptive errors.\n\n**Acceptance Criteria:**\n- [ ] All null cases handled\n- [ ] Errors thrown with context\n- [ ] Unit tests added\n- [ ] No uncaught null reference errors",
+      "labels": ["bug", "drips-wave", "3-points"]
+    },
+    {
+      "title": "Fix Race Condition in Nonce Management",
+      "body": "Smart contracts have potential race condition in nonce increment:\n- Multiple concurrent transactions could use same nonce\n- Verify current nonce management is atomic\n- Add transaction locking if needed\n\n**Acceptance Criteria:**\n- [ ] Race condition fixed\n- [ ] Add concurrency tests\n- [ ] Document nonce lifecycle\n- [ ] Test with 100+ concurrent requests",
+      "labels": ["bug", "drips-wave", "5-points"]
+    },
+    {
+      "title": "Fix Escrow Timeout Edge Case",
+      "body": "Escrow contract's timeout check doesn't properly handle:\n- Edge case: timeout exactly at block time\n- Refunds not triggered on expiry\n- Status not updated on timeout\n\n**Acceptance Criteria:**\n- [ ] Timeout logic fixed\n- [ ] Tests cover edge cases\n- [ ] Refund triggered correctly\n- [ ] Status transitions tested",
+      "labels": ["bug", "drips-wave", "3-points"]
+    },
+    {
+      "title": "Fix Frontend Form Validation Message Clarity",
+      "body": "Registration and login forms show cryptic validation errors:\n- \"Invalid input\" instead of specific field errors\n- Password requirements not clearly explained\n- Email validation errors unclear\n\nImprove error messages to be user-friendly.\n\n**Acceptance Criteria:**\n- [ ] All error messages specific\n- [ ] Password requirements shown\n- [ ] Real-time validation feedback\n- [ ] Tested with 5+ test cases",
+      "labels": ["bug", "frontend", "drips-wave", "2-points"]
+    }
+  ]
+}
