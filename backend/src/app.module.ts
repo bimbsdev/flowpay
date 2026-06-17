@@ -4,10 +4,10 @@ import { APP_INTERCEPTOR } from '@nestjs/core'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { AuthModule } from './auth/auth.module'
+import { RateLimitInterceptor } from './common/interceptors/rate-limit.interceptor'
 import { DripsModule } from './drips/drips.module'
 import { PaymentsModule } from './payments/payments.module'
 import { WorkflowsModule } from './workflows/workflows.module'
-import { RateLimitInterceptor } from './common/interceptors/rate-limit.interceptor'
 
 @Module({
   imports: [
